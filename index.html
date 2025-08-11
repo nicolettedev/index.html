@@ -23,15 +23,41 @@
         <hr/>
         <a href="WITHDRAWAL_FORM_FUNDS_TRANSFER.pdf">Open PDF</a>
         <h2>Login</h2>
-        <br/>
-        <input placeholder="Email address"/>
-        <br/>
-        <input placeholder="Password"/>
-        <br/>
-        <input type="button" value="Submit" onclick="window.location='dashboard.html'"/>
+<form id="loginForm" onsubmit="return loginUser()">
+    <label>Email:</label><br>
+    <input type="email" id="email" required><br><br>
+
+    <label>Password:</label><br>
+    <input type="password" id="password" required><br><br>
+
+    <input type="submit" value="Login">
+</form>
+
+<script>
+function loginUser() {
+    // The correct login details
+    const correctEmail = "test@example.com";
+    const correctPassword = "12345";
+
+    // Get the entered values
+    const enteredEmail = document.getElementById("email").value;
+    const enteredPassword = document.getElementById("password").value;
+
+    // Check if they match
+    if (enteredEmail === correctEmail && enteredPassword === correctPassword) {
+        // Redirect to dashboard
+        window.location.href = "dashboard.html";
+    } else {
+        alert("Email or Password is incorrect!");
+    }
+
+    return false; // Prevents form from actually submitting
+}
+</script>
     </body>
 
 </html>
+
 
 
 
