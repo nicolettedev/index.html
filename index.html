@@ -33,30 +33,34 @@
     <input type="submit" value="Login">
 </form>
 
+<br>
+<!-- Sign Up Button -->
+<input type="button" value="Sign Up" onclick="window.location.href='signup.html'">
+
 <script>
 function loginUser() {
     // The correct login details
     const correctEmail = "test@example.com";
     const correctPassword = "12345";
 
-    // Get the entered values
+    // Get entered values
     const enteredEmail = document.getElementById("email").value;
     const enteredPassword = document.getElementById("password").value;
 
     // Check if they match
     if (enteredEmail === correctEmail && enteredPassword === correctPassword) {
-        // Redirect to dashboard
         window.location.href = "dashboard.html";
     } else {
         alert("Email or Password is incorrect!");
     }
 
-    return false; // Prevents form from actually submitting
+    return false;
 }
 </script>
     </body>
 
 </html>
+
 
 
 
